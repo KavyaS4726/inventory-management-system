@@ -9,8 +9,16 @@ import { swaggerSpec } from './config/swagger';
 
 const app: Application = express();
 
+const allowedOrigins = [
+  "https://inventory-management-system-mmanaxgk7-kavyas4726s-projects.vercel.app",
+  "https://inventory-management-system-git-main-kavyas4726s-projects.vercel.app",
+];
+
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
@@ -26,4 +34,4 @@ app.use(notFoundHandler);
 app.use(errorHandler);
 
 
-export default app; 
+export default app;
