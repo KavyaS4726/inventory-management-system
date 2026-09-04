@@ -188,7 +188,7 @@ export default function OrdersPage() {
     <div className="p-6">
       {/* PAGE HEADER */}
 
-      <div className="flex items-center justify-between mb-6">
+     <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
         <div>
           <h1 className="text-2xl font-semibold text-gray-800">
             Orders
@@ -521,7 +521,8 @@ export default function OrdersPage() {
                             Order Items
                           </p>
 
-                          <table className="w-full text-xs">
+                           <div className="overflow-x-auto">
+                            <table className="min-w-[500px] w-full text-xs">
                             <thead className="text-gray-500">
                               <tr>
                                 <th className="text-left py-2 font-medium">
@@ -584,6 +585,7 @@ export default function OrdersPage() {
                               )}
                             </tbody>
                           </table>
+                           </div>
                         </td>
                       </tr>
                     )}

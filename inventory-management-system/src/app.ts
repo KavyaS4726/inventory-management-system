@@ -10,6 +10,7 @@ import { swaggerSpec } from './config/swagger';
 const app: Application = express();
 
 const allowedOrigins = [
+   "http://localhost:5173",
   "https://inventory-management-system-mmanaxgk7-kavyas4726s-projects.vercel.app",
   "https://inventory-management-system-git-main-kavyas4726s-projects.vercel.app",
   "https://inventory-management-system-o3h8joyfv-kavyas4726s-projects.vercel.app",

@@ -707,7 +707,7 @@ export default function RolesPermissions() {
     <>
       {/* PAGE HEADER */}
 
-      <div className="flex justify-between items-start mb-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">
             Roles &amp; Permissions
