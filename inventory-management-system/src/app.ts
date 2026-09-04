@@ -16,10 +16,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
+app.get('/', (req, res) => {
+  res.status(200).json({ status: 'ok', service: 'inventory-management-system' });
+});
+
 app.use("/api/v1", routes);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
 
 
-export default app;
+export default app; 
