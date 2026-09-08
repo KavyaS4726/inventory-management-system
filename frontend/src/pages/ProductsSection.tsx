@@ -308,7 +308,7 @@ export default function ProductsSection() {
           <button
             type="button"
             onClick={handleAdd}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#0B1F3A] text-white rounded-lg hover:bg-[#132a4d] transition"
+            className="self-start md:self-auto inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#0B1F3A] text-white rounded-lg hover:bg-[#132a4d] transition"
           >
             <Plus size={18} />
             Add Product
@@ -517,8 +517,8 @@ export default function ProductsSection() {
                 </th>
 
                 {(canEdit || canDelete) && (
-                  <th className="text-right px-6 py-3 text-xs font-semibold text-slate-500 uppercase">
-                    Actions
+                  <th className="sticky right-0 bg-slate-50 text-right px-6 py-3 text-xs font-semibold text-slate-500 uppercase">
+                   Actions
                   </th>
                 )}
               </tr>
@@ -565,8 +565,8 @@ export default function ProductsSection() {
                     </td>
 
                     {(canEdit || canDelete) && (
-                      <td className="px-6 py-4">
-                        <div className="flex items-center justify-end gap-2">
+                      <td className="sticky right-0 bg-white px-6 py-4">
+                         <div className="flex items-center justify-end gap-2">
                           {canEdit && (
                             <button
                               type="button"

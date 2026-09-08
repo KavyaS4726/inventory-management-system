@@ -358,7 +358,7 @@ export default function SuppliersSection() {
   return (
     <div className="p-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">
             Suppliers
@@ -376,7 +376,7 @@ export default function SuppliersSection() {
             onClick={() =>
               showForm ? resetForm() : openCreateForm()
             }
-            className="bg-[#0B1F3A] hover:bg-[#132a4d] text-white text-sm font-medium px-4 py-2 rounded-lg transition"
+            className="self-start sm:self-auto bg-[#0B1F3A] hover:bg-[#132a4d] text-white text-sm font-medium px-4 py-2 rounded-lg transition"
           >
             {showForm ? "Cancel" : "+ Add Supplier"}
           </button>
@@ -556,7 +556,7 @@ export default function SuppliersSection() {
 
                   {/* Dynamic Actions */}
                   {(canEdit || canDelete) && (
-                    <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition shrink-0">
+                    <div className="flex items-center gap-1 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition shrink-0">
                       {canEdit && (
                         <button
                           type="button"
