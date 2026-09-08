@@ -121,6 +121,7 @@ export default function BuyersPage() {
 
     try {
       const data = await getAllBuyers(token);
+
       setBuyers(data);
     } catch (err) {
       console.error(err);
@@ -166,6 +167,7 @@ export default function BuyersPage() {
       }
 
       setShowModal(false);
+
       await fetchBuyers();
     } catch (err) {
       console.error(err);
@@ -201,7 +203,8 @@ export default function BuyersPage() {
 
   return (
     <div className="p-6">
-      <div className="flex items-center justify-between mb-6">
+      {/* Header */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
         <div>
           <h1 className="text-2xl font-semibold text-gray-800">
             Buyers
@@ -217,13 +220,14 @@ export default function BuyersPage() {
         {canCreate && (
           <button
             onClick={openCreateModal}
-            className="bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium"
+            className="self-start sm:self-auto bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium"
           >
             + Add Buyer
           </button>
         )}
       </div>
 
+      {/* Search */}
       <div className="relative mb-5 max-w-sm">
         <Search
           size={16}
@@ -239,6 +243,7 @@ export default function BuyersPage() {
         />
       </div>
 
+      {/* Content */}
       {loading ? (
         <p className="text-gray-500">
           Loading buyers...
@@ -270,7 +275,7 @@ export default function BuyersPage() {
                 key={buyer.id}
                 className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-gray-300 transition group"
               >
-                <div className="flex items-start justify-between">
+                <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center gap-3 min-w-0">
                     <div
                       className="w-11 h-11 rounded-full flex items-center justify-center text-sm font-semibold shrink-0"
@@ -295,7 +300,7 @@ export default function BuyersPage() {
 
                   {/* Only show actions that the user actually has */}
                   {(canEdit || canDelete) && (
-                    <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition shrink-0">
+                    <div className="flex items-center gap-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition shrink-0">
                       {canEdit && (
                         <button
                           onClick={() =>
@@ -370,9 +375,10 @@ export default function BuyersPage() {
         </div>
       )}
 
+      {/* Add / Edit Modal */}
       {showModal && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-md">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
             <h2 className="text-lg font-semibold mb-4">
               {editingId
                 ? "Edit Buyer"

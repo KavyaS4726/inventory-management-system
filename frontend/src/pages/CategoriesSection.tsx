@@ -209,7 +209,7 @@ export default function CategoriesSection() {
   return (
     <div className="p-6">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">
             Categories
@@ -228,7 +228,7 @@ export default function CategoriesSection() {
             onClick={() =>
               showForm ? resetForm() : openCreateForm()
             }
-            className="bg-[#0B1F3A] hover:bg-[#132a4d] text-white text-sm font-medium px-4 py-2 rounded-lg transition"
+            className="self-start sm:self-auto bg-[#0B1F3A] hover:bg-[#132a4d] text-white text-sm font-medium px-4 py-2 rounded-lg transition"
           >
             {showForm ? "Cancel" : "+ Add Category"}
           </button>
@@ -337,7 +337,7 @@ export default function CategoriesSection() {
               key={category.id}
               className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm hover:shadow-md hover:border-slate-300 transition group"
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-2">
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="w-11 h-11 rounded-lg flex items-center justify-center shrink-0 bg-[#EAF0FB] text-[#0B1F3A]">
                     <Tag size={18} />
@@ -356,7 +356,7 @@ export default function CategoriesSection() {
 
                 {/* Dynamic Actions */}
                 {(canEdit || canDelete) && (
-                  <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition shrink-0">
+                  <div className="flex items-center gap-1 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition shrink-0">
                     {canEdit && (
                       <button
                         type="button"
